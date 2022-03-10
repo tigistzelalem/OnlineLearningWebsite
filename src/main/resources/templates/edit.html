@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>update-course</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@500;700;900&family=Sofia&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+      div #image {
+        margin-left: 8em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>update courses(admin)</h1>
+      <div> 
+
+  <form
+      th:action="@{/admin/{id}(id=${courses.id})}"
+      method="post"
+      style="max-width: 700px; margin: 0 auto"
+      th:object="${courses}" enctype="multipart/form-data">
+      <div class="alert alert-danger" th:if="${#fields.hasErrors('*')}">
+        <p th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+      </div>
+      <section class="">
+        <div class="container mt-3">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+              <div class="card text-black shadow-lg bg-white" style="border-radius: 25px;">
+                <div class="card-body">
+                  <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-12 col-xl-8 order-2 order-lg-1" style="font-family:'Poppins';">
+                      <img
+            th:src="@{/images/home.svg}"id="image" width="85" height="85"
+            alt=""/>
+                      <p class="text-center fw-bold fs-4 mt-3 bg-light">Edit course</p>                   
+                              <div >
+                                  <div class="form-group row p-3">
+                                    <label class="col-form-label col-lg-12">Title</label>
+                                    <div>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        th:field="${courses.title}"
+                                        required="required"
+                                        style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                                        
+                                      />
+                                    </div>
+                                  </div>
+                                
+                          
+                                  <div class="form-group row p-3">
+                                    <label class="col-form-label col-lg-12">Description</label>
+                          
+                                    <div> 
+                                       <textarea name="desc" 
+                                      class="form-control"
+                                      th:field="${courses.description}"
+                                      required="required"
+                                      cols="20" rows="4"
+                                      style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                                       ></textarea>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                  <div class="form-group row p-3">
+                                    <label class="col-form-label col-lg-12">Instructur</label>
+                                    <div>
+                                      <input
+                                        type="text"
+                                        class="form-control"
+                                        th:field="${courses.instructur}"
+                                        required="required"
+                                        minlength="3"
+                                        maxlength="50"
+                                        style="border: 1.5px solid rgba(207, 207, 252, 0.418);"
+                                        
+                                      />
+                                      
+                                    </div>
+                                  </div>
+                               
+                          
+                                <div class="custom-file mb-1">
+                                  <input type="file" name="file" accept="*" id="file" class="custom-file-input">
+                                  <label class="custom-file-label" for="file" style="border: 1.5px solid rgba(207, 207, 252, 0.418);" >Video</label>
+                              </div>
+                          
+                              <div>
+                                <button type="submit" class="btn btn-primary">update course</button>
+                              </div>
+      
+                      </form> 
+      
+                    </div>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>

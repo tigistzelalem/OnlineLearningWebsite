@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>courses</title>
+    <link rel="stylesheet" th:href="@{/css/courses.css}" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@500;700;900&family=Sofia&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- boot navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            th:src="@{/images/home.svg}"
+            alt=""
+            width="70"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+          Daily code
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="courses">courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="userdashboard"
+                ><button type="submit" class="btn btn-primary">
+                  Dashboard
+                </button></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--  -->
+    <div class="container text-center">
+      <h3>Courses</h3>
+      <div th:if="${#lists.isEmpty(courses)}">
+        <h2>No courses added by the admin yet!</h2>
+      </div>
+      <div th:unless="${#lists.isEmpty(courses)}">
+        <p th:text="${#lists.size(courses)} +' courses added'"></p>
+      </div>
+
+      <div class="row">
+        <div
+          class="card col-ms-3 container text-center fs-3 p-3 dvi mb-5 ms-5"
+          style="width: 18rem; background-color: rgba(244, 244, 255, 0.712)"
+          th:each="courses: ${courses}"
+        >
+          <div class="fw-bold card-header" th:text="${courses.title}"></div>
+          <br />
+          <div th:text="${courses.description}" id="desc"></div>
+          <div th:text="${courses.instructur}" id="desc-name"></div>
+          <div>
+            <a th:href="@{/course/{id}(id=${courses.id})}" id="detail"
+              >Detail View</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-4 pb-0">
+        <section class="mb-4">
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="https://www.facebook.com/"
+            role="button"
+            aria-label="first link"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="twitter"
+            role="button"
+            aria-label="second link"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="/instagram"
+            role="button"
+            aria-label="third link"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="/linked in"
+            role="button"
+            aria-label="fourth link"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="github"
+            role="button"
+            aria-label="fifth link"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Dailycode.com</a>
+      </div>
+    </footer>
+    <script th:src="@{/js/Daily code.bundle.min.js}"></script>
+  </body>
+</html>

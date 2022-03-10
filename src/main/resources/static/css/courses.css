@@ -1,0 +1,82 @@
+body {
+  /* font-family: 'Sofia'; */
+  /* font-style: italic; */
+}
+h3 {
+  margin-right: 35em;
+  margin-top: 2em;
+}
+nav {
+  margin-top: 1.3em;
+}
+.col-ms-3 {
+  margin: 5em;
+}
+.container-fluid{
+  font-family: 'Poppins';
+}
+
+#navbarNav {
+  margin-left: 40em;
+}
+.container {
+  font-family: 'Poppins';
+  margin-right: 35em;
+  margin-top: 2em;
+
+}
+footer {
+  margin-top: 19.5em;
+}
+.lead {
+  margin-right: 2em;
+  margin-left: 2em;
+  margin-bottom: 2em;
+  font-size: medium;
+}
+.col h4 {
+  margin-top: 5em;
+  /* font-size: ; */
+}
+.col img {
+  margin-left: 3em;
+}
+.col-lg-6 {
+  margin: 1em;
+}
+.card-header {
+  font-size: large;
+  text-transform: capitalize;
+
+}
+#desc {
+  font-size: 18px;
+}
+#desc-name{
+  font-size: 15px;
+  background-color:black;
+  color: white;
+
+}
+#detail {
+  margin-left: 5em;
+  font-size: 15px;
+  text-decoration: none;
+  color: rgb(53, 3, 3);
+}
+
+/* .card div {
+  transition: all .2s ease-in-out;
+}
+.card div:hover {
+  transform: scale(1.1);
+} */
+.card-body{
+  transition: all .5s;
+}
+.card-body:hover {
+  transform: scale(1.1);
+  background-color: rgb(44, 25, 25);
+  color: white;
+  border-radius: 3em;
+}

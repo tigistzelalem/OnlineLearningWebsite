@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>user Dashboard</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <style>
+      nav {
+        margin-top: 1.3em;
+      }
+      #navbarNav {
+        margin-left: 45em;
+      }
+      footer {
+        margin-top: 21.5em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- boot navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            th:src="@{/images/home.svg}"
+            alt=""
+            width="70"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+          Daily code
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="userdashboard">Dashboard</a>
+            </li>
+
+            <form
+              class="form-inline my-2 my-lg-0"
+              form-method="post"
+              th:action="@{/logout}"
+            >
+              <button
+                class="btn btn-outline-danger my-2 my-sm-0 btn-sm"
+                type="submit"
+              >
+                Logout
+              </button>
+            </form>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container text-center">
+      <h1>Dashboard</h1>
+      <div th:if="${#lists.isEmpty(courses)}">
+        <h2>No courses enrolled yet!</h2>
+      </div>
+      <div th:unless="${#lists.isEmpty(courses)}">
+        <p
+          th:text="'You have enrolled ' + ${#lists.size(courses)} +' courses'"
+        ></p>
+      </div>
+      <h2>
+        <a th:href="@{/courses}" class="btn btn-primary">courses lists</a>
+      </h2>
+
+      <div class="row">
+        <div
+          class="col-ms-3 container text-center fs-3 p-3 dvi mb-5 ms-5"
+          style="
+            width: 25rem;
+            background-color: rgba(241, 241, 250, 0.836);
+            border-radius: 1em;
+          "
+          th:each="courses: ${courses}"
+          id="card"
+        >
+          <div class="card-body">
+            <img th:src="@{/images/learn.svg}" alt="" width="110" height="90" />
+            <div class="fw-bold card" th:text="${courses.courses.title}"></div>
+            <br />
+            <div th:text="${courses.courses.description}" id="desc"></div>
+            <div th:text="${courses.courses.instructur}" id="desc-name"></div>
+            <div>
+              <a
+                th:href="@{/learnCourse/{id}(id=${courses.id})}"
+                class="btn btn-primary"
+                >watch video</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-center text-white">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Dailycode.com</a>
+      </div>
+    </footer>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>

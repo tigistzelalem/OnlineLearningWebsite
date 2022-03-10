@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Dailycode</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Red+Hat+Display:wght@500;700;900&family=Sofia&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            th:src="@{/images/home.svg}"
+            alt=""
+            width="70"
+            height="50"
+            class="d-inline-block align-text-top"
+          />
+          Daily code
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="courses">courses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="apply"
+                ><button type="submit" class="btn btn-primary">
+                  Register
+                </button></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-danger my-2 my-sm-0" href="/login"
+                >Login</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container text-center">
+      <h1>Welcome to Daily code</h1>
+    </div>
+    <div class="container">
+      <div class="row row align-items-center">
+        <div class="col-lg-6">
+          <h5 class="mt-3">
+            The right place to develop skills and see thing in different way. We
+            teach to impower this generation to be egar about what he/she
+            learns...
+
+            <p class="lead text-secondary my-5">
+              “Education is the most powerful weapon which you can use to change
+              the world” - Nelson Mandela
+            </p>
+          </h5>
+          <a class="link" href="apply"
+            ><button type="submit" class="btn btn-primary">Apply</button></a
+          >
+        </div>
+        <div class="col">
+          <img
+            th:src="@{/images/home-hero.svg}"
+            width="400"
+            height="300"
+            alt="hero-picture"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container text-center">
+      <h4>About</h4>
+      <p>
+        Learning is about interest and passion and we are here to create that
+        and increase the need of young generation to know new things. We are
+        software engineers from addis ababa university and we would love to
+        share what we learn and develop to other. Team spirt and collabration is
+        a basic thing to step forward.
+      </p>
+    </div>
+    <!-- courses card -->
+    <section class="why-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <h2 class="mt-5 text-center">courses</h2>
+            <p class="mb-5 text-center">
+              Here we brought u some courses that will help you develop your
+              skills and down below there are some catagories that we offer in
+              this platform.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>01</span> -->
+              <h4>Html & Css</h4>
+              <p>
+                Fundamental and basic knowledge about html and css for web
+                development.
+              </p>
+              <img th:src="@{/images/css.jpeg}" alt="html" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>02</span> -->
+              <h4>JavaScript</h4>
+              <p>
+                JavaScript is one of important part in web development and
+                buliding.
+              </p>
+              <img th:src="@{/images/react.jpeg}" alt="js" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>03</span> -->
+              <h4>css frameworks</h4>
+              <p>
+                Interactive and beautiful interface all that people want so see
+                some catagories of frameworks like react, angular....
+              </p>
+              <img th:src="@{/images/flutter.jpeg}" alt="css" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>04</span> -->
+              <h4>Databases</h4>
+              <p>
+                Backbone for every web develpment...on this catagory there will
+                be d/t type of databases we can use like relational mysql or non
+                relational mongodb....
+              </p>
+              <img th:src="@{/images/html.jpeg}" alt="database" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>05</span> -->
+              <h4>UI design</h4>
+              <p>
+                Basic UI designng for web applications and how to use them and
+                where...
+              </p>
+              <img th:src="@{/images/nodejs.jpg}" alt="design" />
+            </div>
+          </div>
+
+          <div class="col-sm-6 col-lg-4">
+            <div class="box">
+              <!-- <span>06</span> -->
+              <h4>node js</h4>
+              <p>
+                look deep in to node js and how it works. also we gonna look at
+                how node js works and it basic features.
+              </p>
+              <img th:src="@{/images/spring.jpeg}" alt="node js" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- teamssssss -->
+    <section class="our-team">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2>Our Team Section</h2>
+            <p>
+              Four of our team members with their roles. we can say proudly that
+              they are talented, dediacted and hard working. This project won't
+              be in hand without them...
+            </p>
+          </div>
+        </div>
+        <hr class="mb-5 mt-4" />
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <img th:src="@{/images/girl.svg}" class="img-fluid" alt="" />
+              <div class="member-info">
+                <div class="member-detail">
+                  <h4>Feven Tolla</h4>
+                  <span>Web developer</span>
+                </div>
+                <div class="social">
+                  <a href="facebook" aria-label="facebook link"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="twitter" aria-label="twitter link"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="linked in" aria-label="linked in link"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                  <a href="instagram" aria-label="instagram link"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <img th:src="@{/images/women.svg}" class="img-fluid" alt="" />
+              <div class="member-info">
+                <div class="member-detail">
+                  <h4>Tigist wondimenh</h4>
+                  <span>Web Developer</span>
+                </div>
+                <div class="social">
+                  <a href="facebook" aria-label="facebook link"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="twitter" aria-label="twitter link"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="linked in" aria-label="linked in link"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                  <a href="instagram" aria-label="instagram link"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <img th:src="@{/images/laddy.svg}" class="img-fluid" alt="" />
+              <div class="member-info">
+                <div class="member-detail">
+                  <h4>Mekdes kebede</h4>
+                  <span>Web designer</span>
+                </div>
+                <div class="social">
+                  <a href="facebook" aria-label="facebook link"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="twitter" aria-label="twitter link"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="linked in" aria-label="linked in link"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                  <a href="instagram" aria-label="instagram link"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <img th:src="@{/images/she.svg}" class="img-fluid" alt="" />
+              <div class="member-info">
+                <div class="member-detail">
+                  <h4>Tigist Zelalem</h4>
+                  <span>web designer</span>
+                </div>
+                <div class="social">
+                  <a href="facebook" aria-label="facebook link"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="twitter" aria-label="twitter link"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="linked in" aria-label="linked in link"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                  <a href="instagram" aria-label="instagram link"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-5" />
+      </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-4 pb-0">
+        <section class="mb-4">
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="https://www.facebook.com/"
+            role="button"
+            aria-label="first link"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="twitter"
+            role="button"
+            aria-label="second link"
+            ><i class="fab fa-twitter"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="/instagram"
+            role="button"
+            aria-label="third link"
+            ><i class="fab fa-instagram"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="/linked in"
+            role="button"
+            aria-label="fourth link"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+
+          <a
+            class="btn btn-outline-light btn-floating m-1"
+            href="github"
+            role="button"
+            aria-label="fifth link"
+            ><i class="fab fa-github"></i
+          ></a>
+        </section>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Dailycode.com</a>
+      </div>
+    </footer>
+
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+  </body>
+</html>
